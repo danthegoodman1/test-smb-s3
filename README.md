@@ -2,6 +2,10 @@
 
 Exposes a Cloudflare R2 (or S3-compatible) bucket as an SMB share.
 
+Had to use SMB, nfs v4 kept panicking the kernel on writes, and v3 kept disconnecting.
+
+Sometimes SMB connects when mountpoint-s3 goes nuts about out of order writes.
+
 ## Setup
 
 1. Create a `.env` file:
